@@ -13,16 +13,17 @@ struct ListView: View {
     
     var body: some View {
         List{
-            ForEach(ListViewModel.items) { item in
+            ForEach(listViewmodel.items) { item in
                 ListRowView(item: item)
                     .onTapGesture {
                         withAnimation(.linear) {
-                            
+//                            ITEM PROBLEM
+//                            ListViewModel(item: item)
                         }
                     }
             }
-            .onDelete(perform: listViewModel.deleteItem)
-            .onMove(perform: listViewModel.moveItem)
+            .onDelete(perform: listViewmodel.deleteItem)
+            .onMove(perform: listViewmodel.moveItem)
         }
         .listStyle(PlainListStyle())
         .navigationTitle("Todo List 📝")

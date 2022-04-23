@@ -13,15 +13,15 @@ class ListViewModel: ObservableObject {
     
     init() {
         getItems()
-        
     }
+    
     func getItems() {
-        let newItemss = [
+        let newItems = [
             ItemModel(title: "This is the first title!", isCompleted: false),
             ItemModel(title: "This is the second!", isCompleted: true),
             ItemModel(title: "Third title!", isCompleted: false),
-
         ]
+        
         items.append(contentsOf: newItems)
     }
     func deleteItem(indexSet: IndexSet) {
@@ -38,12 +38,16 @@ class ListViewModel: ObservableObject {
     
     func updateItem(item: ItemModel) {
         
-        if items.firstIndex{ (existingItem) -> Bool in
-            return existingItem.id == item.id
-        } {
-           
-       }
+//        if (items.firstIndex{ (existingItem) -> Bool in
+//            return existingItem.id == item.id
+//        } != nil) {
+//
+//
+//       }
         
-        if let index = items.firstIndex(where: {$0.id == item.id})
+        if (items.firstIndex(where: {$0.id == item.id}) != nil) {
+//            items["HAVE TO WRITE INTEGER"] = item.updateCompletion()
+            
+        }
     }
 }
