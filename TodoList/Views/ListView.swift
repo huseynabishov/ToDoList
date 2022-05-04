@@ -17,6 +17,7 @@ struct ListView: View {
                 ListRowView(item: item)
                     .onTapGesture {
                         withAnimation(.linear) {
+                            listViewmodel.updateItem(item: item)
 //                            ITEM PROBLEM
 //                            ListViewModel(item: item)
                         }
